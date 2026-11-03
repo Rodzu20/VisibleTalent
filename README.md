@@ -29,7 +29,9 @@ La sección «Nuestro blog», su tarjeta, el botón de portada y el enlace del p
 
 ## Diseño
 
-Referencia visual: https://uniride-movilidad.vercel.app/. Portada verde oscuro, fondos crema, botones turquesa y componentes inspirados en notas y documentos. Se utiliza únicamente el nombre de la propuesta como texto, sin logo.
+Referencia de estructura: https://uniride-movilidad.vercel.app/. Se conserva la paleta original de VisibleTalent: azul, turquesa, violeta y fondos claros, con componentes inspirados en notas y documentos. Se utiliza únicamente el nombre de la propuesta como texto, sin logo.
+
+Slogan oficial: «Juntos, por carreras más visibles y exitosas».
 
 Sitio público: https://visibletalent.rodzu13.chatgpt.site/
 
