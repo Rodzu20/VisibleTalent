@@ -29,7 +29,7 @@ La sección «Nuestro blog», su tarjeta, el botón de portada y el enlace del p
 
 ## Diseño
 
-Referencia de estructura: https://uniride-movilidad.vercel.app/. Se conserva la paleta original de VisibleTalent: azul, turquesa, violeta y fondos claros, con componentes inspirados en notas y documentos. Se utiliza únicamente el nombre de la propuesta como texto, sin logo.
+Referencia de estructura: https://uniride-movilidad.vercel.app/. La paleta se aplica a todas las secciones: azul como tono principal y en el nombre VisibleTalent, turquesa, violeta y fondos claros, con componentes inspirados en notas y documentos. Se utiliza únicamente el nombre de la propuesta como texto, sin logo.
 
 Slogan oficial: «Juntos, por carreras más visibles y exitosas».
 
