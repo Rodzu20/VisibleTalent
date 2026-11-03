@@ -95,7 +95,6 @@ const profiles = {
 };
 
 const demoDialog = document.querySelector('#demo-dialog');
-const privacyDialog = document.querySelector('#privacy-dialog');
 const profileSelect = document.querySelector('#demo-profile');
 const selection = document.querySelector('#demo-selection');
 const result = document.querySelector('#demo-result');
@@ -121,7 +120,6 @@ document.querySelectorAll('[data-open-demo]').forEach((button) => button.addEven
   resetDemo();
   openDialog(demoDialog, button);
 }));
-document.querySelectorAll('[data-open-privacy]').forEach((button) => button.addEventListener('click', () => openDialog(privacyDialog, button)));
 document.querySelectorAll('dialog').forEach((dialog) => {
   dialog.querySelectorAll('[data-close-dialog]').forEach((button) => button.addEventListener('click', () => dialog.close()));
   dialog.addEventListener('click', (event) => {
