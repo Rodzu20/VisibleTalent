@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 const root = dirname(fileURLToPath(import.meta.url));
 const port = Number(process.env.PORT || 5173);
 const mime = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png' };
-const publicFiles = new Set(['index.html', 'styles.css', 'script.js', 'assets/favicon.svg', 'assets/visibletalent-logo.png']);
+const publicFiles = new Set(['index.html', 'styles.css', 'script.js']);
 
 const server = createServer(async (req, res) => {
   if (req.method !== 'GET' && req.method !== 'HEAD') {

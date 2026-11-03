@@ -19,13 +19,19 @@ También puedes abrir `index.html` directamente en un navegador o usar la extens
 - `index.html`: contenido y secciones de la landing.
 - `styles.css`: colores, tipografía, componentes y adaptación a móvil.
 - `script.js`: pestañas del reporte, menú móvil y demostración de diagnóstico.
-- `assets/visibletalent-logo.png`: logo original proporcionado por el equipo, utilizado sin repetir el nombre junto a la imagen.
+- El logo original se conserva en `assets/` como archivo de referencia y no se muestra ni se incluye en la publicación.
 - `server.mjs`: servidor local de archivos públicos.
 - `build.mjs`: prepara los archivos públicos en `dist/` para publicación.
 
 ## Blog
 
-La sección «Nuestro blog», su tarjeta y el enlace del pie llevan a https://visibletalent.blogspot.com/ en una pestaña nueva.
+La sección «Nuestro blog», su tarjeta, el botón de portada y el enlace del pie llevan a https://visibletalent.blogspot.com/ en una pestaña nueva.
+
+## Diseño
+
+Referencia visual: https://uniride-movilidad.vercel.app/. Portada verde oscuro, fondos crema, botones turquesa y componentes inspirados en notas y documentos. Se utiliza únicamente el nombre de la propuesta como texto, sin logo.
+
+Sitio público: https://visibletalent.rodzu13.chatgpt.site/
 
 ## Preparar para publicación
 
@@ -40,6 +46,6 @@ npm run build
 
 La página incluye una demostración con tres perfiles ficticios. No analiza CV reales, no crea cuentas y no envía ni almacena datos de postulantes. Los indicadores y recomendaciones de ejemplo están identificados como ilustrativos. La revisión por pares y el seguimiento se describen como funcionalidades futuras.
 
-La tipografía se carga opcionalmente desde Google Fonts; hay fuentes alternativas para uso sin conexión. El logo se sirve desde `assets/`, sin depender del archivo adjunto original. No se utilizan paquetes externos de JavaScript ni herramientas de analítica.
+La tipografía se carga opcionalmente desde Google Fonts; hay fuentes alternativas para uso sin conexión. No se utilizan paquetes externos de JavaScript ni herramientas de analítica.
 
 Validación de sintaxis: `npm run check`.
