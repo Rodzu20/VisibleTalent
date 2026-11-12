@@ -59,7 +59,7 @@ document.addEventListener('keydown', (event) => {
     menuToggle.focus();
   }
 });
-window.matchMedia('(min-width: 851px)').addEventListener('change', closeMenu);
+window.matchMedia('(min-width: 961px)').addEventListener('change', closeMenu);
 
 const profiles = {
   marketing: {
@@ -95,6 +95,7 @@ const profiles = {
 };
 
 const demoDialog = document.querySelector('#demo-dialog');
+const appDialog = document.querySelector('#app-dialog');
 const profileSelect = document.querySelector('#demo-profile');
 const selection = document.querySelector('#demo-selection');
 const result = document.querySelector('#demo-result');
@@ -121,6 +122,173 @@ document.querySelectorAll('[data-open-demo]').forEach((button) => button.addEven
   resetDemo();
   openDialog(demoDialog, button);
 }));
+document.querySelectorAll('[data-open-app-modal]').forEach((button) => button.addEventListener('click', () => {
+  if (appDialog) openDialog(appDialog, button);
+}));
+
+const planViewButtons = [...document.querySelectorAll('[data-plan-view]')];
+const plansCardsPanel = document.querySelector('#plans-cards-panel');
+const plansMatrixPanel = document.querySelector('#plans-matrix-panel');
+planViewButtons.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const view = btn.dataset.planView;
+    planViewButtons.forEach((item) => {
+      const active = item === btn;
+      item.classList.toggle('active', active);
+      item.setAttribute('aria-selected', String(active));
+    });
+    if (plansCardsPanel && plansMatrixPanel) {
+      plansCardsPanel.hidden = view !== 'cards';
+      plansMatrixPanel.hidden = view !== 'matrix';
+    }
+  });
+});
+
+// Blog: vista en tarjetas + lector dentro de la página + sincronización automática con Blogger
+const blogViewButtons = [...document.querySelectorAll('[data-blog-view]')];
+const blogCardsPanel = document.querySelector('#blog-cards-panel');
+const blogEmbedPanel = document.querySelector('#blog-embed-panel');
+blogViewButtons.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const view = btn.dataset.blogView;
+    blogViewButtons.forEach((item) => {
+      const active = item === btn;
+      item.classList.toggle('active', active);
+      item.setAttribute('aria-selected', String(active));
+    });
+    if (blogCardsPanel && blogEmbedPanel) {
+      blogCardsPanel.hidden = view !== 'cards';
+      blogEmbedPanel.hidden = view !== 'embed';
+    }
+  });
+});
+
+let blogArticles = [
+  {
+    category: 'GUÍA PRÁCTICA CV',
+    date: 'Blog VisibleTalent',
+    title: 'Cómo transformar tus proyectos universitarios en experiencia atractiva para tu primer CV',
+    summary: '¿Sientes que tu CV está en blanco porque aún no has tenido un trabajo formal? Aprende el método Acción + Contexto + Aporte para presentar trabajos de curso, laboratorios y voluntariados.',
+    url: 'https://visibletalent.blogspot.com/',
+    contentHtml: `<p>Uno de los mayores bloqueos al postular a tus primeras prácticas preprofesionales es pensar que "sin trabajo previo no hay nada que poner en el CV". Sin embargo, los reclutadores de talento joven evalúan tu potencial a través de lo que ya has resuelto en la universidad.</p>
+      <h4>1. Usa la fórmula Acción + Contexto + Aporte</h4>
+      <p>En lugar de escribir <em>"Realicé un trabajo grupal de marketing"</em>, estructura tu viñeta explicando qué hiciste exactamente, para qué caso o proyecto y cuál fue el entregable concreto.</p>
+      <ul>
+        <li><strong>Acción:</strong> Diseñé, analicé, programé, coordiné, estructuré.</li>
+        <li><strong>Contexto:</strong> Para un emprendimiento local, un curso integrador o una organización estudiantil.</li>
+        <li><strong>Aporte:</strong> Entregando un calendario de contenidos, un prototipo funcional o una matriz de control en Excel.</li>
+      </ul>
+      <h4>2. Destaca tus herramientas reales</h4>
+      <p>Menciona los programas, lenguajes o metodologías que utilizaste durante el proyecto para que tu perfil conecte de forma honesta con los requisitos de la convocatoria.</p>`
+  },
+  {
+    category: 'FILTROS ATS',
+    date: 'Blog VisibleTalent',
+    title: 'Qué es un filtro ATS y por qué las plantillas con exceso de diseño pueden jugar en tu contra',
+    summary: 'Descubre cómo leen los sistemas automatizados tu currículum en convocatorias de prácticas en Lima y qué estructura de texto facilita que un reclutador encuentre tus habilidades clave.',
+    url: 'https://visibletalent.blogspot.com/',
+    contentHtml: `<p>Muchas convocatorias de prácticas y primer empleo reciben cientos de postulaciones en pocos días. Para organizarlas, las empresas utilizan sistemas de seguimiento de candidatos (ATS) que extraen el texto de tu PDF.</p>
+      <h4>¿Por qué fallan los CVs con exceso de elementos gráficos?</h4>
+      <ul>
+        <li><strong>Columnas complejas y tablas flotantes:</strong> Pueden mezclar el orden de lectura de tu educación y tus proyectos.</li>
+        <li><strong>Barras de porcentaje en habilidades:</strong> Un sistema automatizado no interpreta "80% de barra en Excel"; es mucho más claro escribir <em>"Excel intermedio (tablas dinámicas y reportes)"</em>.</li>
+        <li><strong>Textos convertidos en imagen:</strong> Si exportas tu CV como imagen en vez de texto seleccionable, el lector automático verá una hoja en blanco.</li>
+      </ul>
+      <p>En VisibleTalent promovemos pasar de formatos gráficos confusos a una estructura limpia, legible tanto por sistemas ATS como por personas.</p>`
+  },
+  {
+    category: 'PRIMER EMPLEO',
+    date: 'Blog VisibleTalent',
+    title: 'Palabras clave en ofertas de prácticas: cómo conectar tu perfil con lo que pide la empresa',
+    summary: 'Analizamos ejemplos reales de Marketing, Ingeniería de Sistemas y Administración para que identifiques las competencias técnicas y blandas que ya aplicaste sin exagerar ni inventar datos.',
+    url: 'https://visibletalent.blogspot.com/',
+    urlLabel: 'Ver en Blogger',
+    contentHtml: `<p>Cada aviso de prácticas incluye pistas claras sobre lo que el equipo necesita. Leer una oferta con atención te ayuda a decidir qué proyectos académicos priorizar en tu CV.</p>
+      <h4>Tres pasos antes de enviar tu postulación:</h4>
+      <ul>
+        <li><strong>Identifica los términos clave:</strong> Subraya las 3 o 4 actividades principales del puesto (por ejemplo: <em>análisis de audiencia, desarrollo frontend con JavaScript o seguimiento de indicadores</em>).</li>
+        <li><strong>Revisa tu historial académico:</strong> Busca en qué curso, taller o voluntariado pusiste en práctica esa habilidad.</li>
+        <li><strong>Usa el mismo lenguaje con honestidad:</strong> Si en tu curso hiciste "investigación de público objetivo" y la oferta pide "análisis de audiencia", utiliza el término claro explicando cómo lo trabajaste.</li>
+      </ul>`
+  }
+];
+
+const blogReaderDialog = document.querySelector('#blog-reader-dialog');
+const blogPostsGrid = document.querySelector('#blog-posts-grid');
+
+function openBlogArticle(index, trigger) {
+  const post = blogArticles[index];
+  if (!post || !blogReaderDialog) return;
+  document.querySelector('#blog-reader-category').textContent = post.category || 'BLOG VISIBLETALENT';
+  document.querySelector('#blog-reader-title').textContent = post.title;
+  document.querySelector('#blog-reader-date').textContent = post.date || '';
+  document.querySelector('#blog-reader-body').innerHTML = post.contentHtml;
+  const linkEl = document.querySelector('#blog-reader-url');
+  if (linkEl) linkEl.href = post.url || 'https://visibletalent.blogspot.com/';
+  openDialog(blogReaderDialog, trigger);
+}
+
+function bindBlogReadButtons() {
+  document.querySelectorAll('[data-read-post]').forEach((btn) => {
+    btn.addEventListener('click', () => openBlogArticle(Number(btn.dataset.readPost), btn));
+  });
+}
+bindBlogReadButtons();
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+window.handleVisibleTalentBlogger = function (data) {
+  const entries = data?.feed?.entry;
+  if (!Array.isArray(entries) || entries.length === 0 || !blogPostsGrid) return;
+  const loaded = entries.slice(0, 6).map((entry, idx) => {
+    const title = entry.title?.$t || `Artículo ${idx + 1}`;
+    const rawHtml = entry.content?.$t || entry.summary?.$t || '';
+    const temp = document.createElement('div');
+    temp.innerHTML = rawHtml;
+    temp.querySelectorAll('script, style, iframe').forEach((el) => el.remove());
+    const plainText = (temp.textContent || '').replace(/\s+/g, ' ').trim();
+    const summary = plainText.length > 180 ? `${plainText.slice(0, 177)}…` : plainText;
+    const altLink = (entry.link || []).find((l) => l.rel === 'alternate')?.href || 'https://visibletalent.blogspot.com/';
+    const category = entry.category?.[0]?.term?.toUpperCase() || 'BLOG VISIBLETALENT';
+    const pubDate = entry.published?.$t ? new Date(entry.published.$t).toLocaleDateString('es-PE', { day: 'numeric', month: 'short', year: 'numeric' }) : 'VisibleTalent Blog';
+    return {
+      category,
+      date: pubDate,
+      title,
+      summary: summary || 'Haz clic para leer el artículo completo publicado en el blog de VisibleTalent.',
+      url: altLink,
+      contentHtml: temp.innerHTML || `<p>${escapeHtml(summary)}</p>`
+    };
+  });
+  blogArticles = loaded;
+  blogPostsGrid.innerHTML = loaded.map((post, i) => `
+    <article class="blog-post-card">
+      <div class="blog-post-meta">
+        <span class="tag ${i % 2 === 1 ? 'tag-lilac' : ''}">${escapeHtml(post.category)}</span>
+        <time>${escapeHtml(post.date)}</time>
+      </div>
+      <h3>${escapeHtml(post.title)}</h3>
+      <p>${escapeHtml(post.summary)}</p>
+      <div class="blog-post-actions">
+        <button type="button" class="button button-small button-navy" data-read-post="${i}">Leer artículo aquí ${icon('arrow')}</button>
+        <a class="blog-ext-link" href="${escapeHtml(post.url)}" target="_blank" rel="noopener noreferrer">Ver en Blogger ↗</a>
+      </div>
+    </article>
+  `).join('');
+  const statusEl = document.querySelector('#blog-feed-status');
+  if (statusEl) statusEl.textContent = `Mostrando ${loaded.length} artículo(s) en directo desde visibletalent.blogspot.com · Léelos aquí mismo sin salir de la página.`;
+  bindBlogReadButtons();
+};
+
+// Carga automática de artículos desde el feed público de Blogger
+const bloggerScript = document.createElement('script');
+bloggerScript.src = 'https://visibletalent.blogspot.com/feeds/posts/default?alt=json-in-script&max-results=6&callback=handleVisibleTalentBlogger';
+bloggerScript.async = true;
+document.head.appendChild(bloggerScript);
 document.querySelectorAll('dialog').forEach((dialog) => {
   dialog.querySelectorAll('[data-close-dialog]').forEach((button) => button.addEventListener('click', () => dialog.close()));
   dialog.addEventListener('click', (event) => {

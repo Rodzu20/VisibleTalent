@@ -30,16 +30,60 @@
     <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></symbol>
     <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21v-2a7 7 0 0 1 14 0v2M16 4a4 4 0 0 1 0 8M22 21v-2a7 7 0 0 0-4-6"/></symbol>
     <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M14 3v11.2a3.8 3.8 0 1 1-3.2-3.75M14 3c.7 2.6 2.6 4.4 5 4.7"/></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9.5 5 2.5-5 2.5v-5Z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-video" viewBox="0 0 24 24"><rect x="2.5" y="5" width="13.5" height="14" rx="2.5"/><path d="m16 10.5 5.5-3v9l-5.5-3"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="16.5" rx="2"/><path d="M16 3v3M8 3v3M3 9.5h18"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 18h2"/></symbol>
   </defs></svg>
 
   <a class="skip-link" href="#contenido">Ir al contenido</a>
   <header class="site-header">
+    <div class="top-utility-bar">
+      <div class="container top-utility-inner">
+        <span class="top-utility-tagline"><span class="status-dot"></span> Comunidad de empleabilidad joven · Lima, Perú</span>
+        <div class="top-social-links" aria-label="Redes sociales de VisibleTalent">
+          <span class="top-social-label">Síguenos:</span>
+          <a class="social-pill" href="https://www.tiktok.com/@visibletalentdespega" target="_blank" rel="noopener noreferrer" aria-label="TikTok de VisibleTalent (se abre en otra pestaña)">
+            <svg class="icon" aria-hidden="true"><use href="#i-tiktok"/></svg>
+            <span>TikTok</span>
+          </a>
+          <a class="social-pill" href="https://www.instagram.com/visibletalentdespega/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de VisibleTalent (se abre en otra pestaña)">
+            <svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg>
+            <span>Instagram</span>
+          </a>
+          <a class="social-pill" href="https://www.youtube.com/@visibletalentdespega" target="_blank" rel="noopener noreferrer" aria-label="YouTube de VisibleTalent (se abre en otra pestaña)">
+            <svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg>
+            <span>YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
     <div class="container nav-wrap">
       <a class="brand" href="#inicio" aria-label="VisibleTalent, inicio">Visible<span>Talent</span></a>
       <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú"><span></span><span></span></button>
       <nav id="main-nav" aria-label="Navegación principal">
-        <a href="#inicio">Inicio</a><a href="#beneficios">Beneficios</a><a href="#como-funciona">Cómo funciona</a><a href="https://visibletalent.blogspot.com/" target="_blank" rel="noopener noreferrer">Blog <span aria-hidden="true">↗</span><span class="sr-only"> (se abre en otra pestaña)</span></a><a href="#preguntas">Preguntas</a>
-        <a class="button button-small button-navy" href="#registro" data-register>Registrarme gratis <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <div class="nav-links-group">
+          <a href="#inicio">Inicio</a>
+          <a href="#beneficios">Beneficios</a>
+          <a href="#como-funciona">Cómo funciona</a>
+          <a class="nav-pill-link" href="#webinar"><svg class="icon" aria-hidden="true"><use href="#i-video"/></svg> Webinar <span class="live-badge">EN VIVO</span></a>
+          <a class="nav-pill-link nav-pill-planes" href="#planes">Planes</a>
+          <a href="#blog">Blog</a>
+          <a href="#preguntas">Preguntas</a>
+        </div>
+        <div class="nav-actions-group">
+          <a class="button button-small button-navy nav-register-btn" href="#registro" data-register>
+            <span>Regístrate gratis</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <button type="button" class="button button-small button-mint nav-app-btn" data-open-app-modal>
+            <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
+            <span>Descargar la App</span>
+          </button>
+        </div>
       </nav>
     </div>
   </header>
@@ -135,10 +179,376 @@
       </div>
     </section>
 
+    <section class="section webinar-section" id="webinar" aria-labelledby="webinar-title">
+      <div class="container">
+        <div class="section-intro">
+          <span class="eyebrow">APRENDIZAJE EN VIVO · COMUNIDAD VISIBLETALENT</span>
+          <h2 id="webinar-title">Webinar: De proyectos de clase a un CV listo para tu primer empleo</h2>
+          <p>Participa en nuestra sesión práctica de ejemplo y descubre cómo traducir tus cursos, talleres y voluntariados al lenguaje de las convocatorias de prácticas en Lima.</p>
+        </div>
+
+        <div class="webinar-showcase">
+          <div class="webinar-main-card">
+            <div class="webinar-badges">
+              <span class="tag tag-live"><span class="live-dot"></span> PRÓXIMO WEBINAR DE EJEMPLO</span>
+              <span class="tag tag-lilac">ACCESO GRATUITO · CUPOS LIMITADOS</span>
+            </div>
+            <h3>“Cómo superar filtros ATS y destacar tus proyectos académicos sin experiencia laboral previa”</h3>
+            <p class="webinar-summary">En este taller interactivo analizaremos en vivo 3 casos reales de estudiantes de <strong>Marketing, Ingeniería de Sistemas y Administración</strong>, transformando descripciones genéricas en logros medibles y compatibles con sistemas ATS.</p>
+
+            <div class="webinar-meta-grid">
+              <div class="webinar-meta-item">
+                <span class="meta-icon"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span>
+                <div>
+                  <small>FECHA Y HORA</small>
+                  <strong>Jueves 20 · 7:00 p. m. (Hora Perú)</strong>
+                </div>
+              </div>
+              <div class="webinar-meta-item">
+                <span class="meta-icon"><svg class="icon" aria-hidden="true"><use href="#i-video"/></svg></span>
+                <div>
+                  <small>MODALIDAD</small>
+                  <strong>En vivo vía YouTube Live &amp; Zoom</strong>
+                </div>
+              </div>
+              <div class="webinar-meta-item">
+                <span class="meta-icon"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>
+                <div>
+                  <small>DIRIGIDO A</small>
+                  <strong>Estudiantes de 7.° a 10.° ciclo y recién egresados</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="webinar-agenda">
+              <h4>Lo que aprenderás en 45 minutos:</h4>
+              <ul>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> <span><strong>De gráfico a texto estructurado:</strong> por qué los CVs de diseño fallan en plataformas de reclutamiento y cómo corregirlo en minutos.</span></li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> <span><strong>Palabras clave reales:</strong> cómo leer una oferta de prácticas e identificar qué habilidades ya demostraste en la universidad.</span></li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> <span><strong>Simulación en vivo:</strong> demostración del Simulador ATS básico y plantillas pre-aprobadas de VisibleTalent.</span></li>
+              </ul>
+            </div>
+
+            <div class="webinar-actions">
+              <a class="button button-navy" href="#registro" data-register data-webinar-signup>
+                <span>Reservar mi cupo gratis</span>
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </a>
+              <a class="button button-outline" href="https://www.youtube.com/@visibletalentdespega" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg>
+                <span>Ver canal en YouTube ↗</span>
+              </a>
+            </div>
+          </div>
+
+          <aside class="webinar-side-card" aria-label="Ficha del taller en vivo">
+            <div class="speaker-box">
+              <span class="eyebrow">CASO PRÁCTICO EN VIVO</span>
+              <h4>Revisión de CV en tiempo real</h4>
+              <p>Trae tu CV actual o sigue el paso a paso con nuestras plantillas ATS descargables al finalizar la transmisión.</p>
+              <div class="webinar-bonus">
+                <strong>Incluye para asistentes:</strong>
+                <ul>
+                  <li>✓ Plantilla ATS editable pre-aprobada</li>
+                  <li>✓ Checklist de 15 verbos de impacto por carrera</li>
+                  <li>✓ Acceso prioritario al Plan FREE "Primer Paso"</li>
+                </ul>
+              </div>
+              <div class="webinar-social-Note">
+                <span>Síguenos para recordatorios en vivo:</span>
+                <div class="mini-social-row">
+                  <a href="https://www.tiktok.com/@visibletalentdespega" target="_blank" rel="noopener noreferrer">TikTok ↗</a>
+                  <a href="https://www.instagram.com/visibletalentdespega/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+                  <a href="https://www.youtube.com/@visibletalentdespega" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section plans-section" id="planes" aria-labelledby="plans-title">
+      <div class="container">
+        <div class="section-intro">
+          <span class="eyebrow">ESCALA TU EMPLEABILIDAD PASO A PASO</span>
+          <h2 id="plans-title">Planes diseñados para cada etapa de tu carrera</h2>
+          <p>Desde tu primer CV validado para superar filtros ATS hasta un ecosistema inteligente con mentoría entre pares e IA predictiva.</p>
+        </div>
+
+        <div class="plans-view-switcher" role="tablist" aria-label="Modo de visualización de planes">
+          <button type="button" id="view-cards-btn" class="view-switch-btn active" role="tab" aria-selected="true" aria-controls="plans-cards-panel" data-plan-view="cards">Vista de Planes Comerciales</button>
+          <button type="button" id="view-matrix-btn" class="view-switch-btn" role="tab" aria-selected="false" aria-controls="plans-matrix-panel" data-plan-view="matrix">Matriz completa (Etapa, Objetivo y Modelo)</button>
+        </div>
+
+        <div id="plans-cards-panel" class="plans-grid" role="tabpanel" aria-labelledby="view-cards-btn">
+          <!-- 1. FREE -->
+          <article class="plan-card">
+            <div class="plan-card-header">
+              <div class="plan-top-row">
+                <span class="plan-number">1. FREE</span>
+                <span class="plan-stage-badge">MVP (Validación)</span>
+              </div>
+              <h3 class="plan-name">“Primer Paso”</h3>
+              <div class="plan-pricing">
+                <strong class="plan-price">Gratis</strong>
+                <span class="plan-model">Freemium Gratis (Adquisición)</span>
+              </div>
+              <p class="plan-objective"><strong>Objetivo principal:</strong> Captar usuarios y validar el problema</p>
+            </div>
+            <div class="plan-card-body">
+              <span class="plan-features-label">FUNCIONALIDADES CLAVE</span>
+              <ul class="plan-features">
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Registro de usuario y creación de perfil</span></li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Carga de CV y Simulador ATS básico</span></li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Recomendación de palabras clave faltantes</span></li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Transformador de formato gráfico a texto estructurado</span></li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Directorio de plantillas ATS pre-aprobadas</span></li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Muro de comunidad abierto, sistema de referidos y retos de bienvenida</span></li>
+              </ul>
+            </div>
+            <div class="plan-card-footer">
+              <a class="button button-navy full-width" href="#registro" data-register>Empezar gratis <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+
+          <!-- 2. SMART -->
+          <article class="plan-card plan-card-featured">
+            <div class="plan-popular-ribbon">RECOMENDADO PRIMER EMPLEO</div>
+            <div class="plan-card-header">
+              <div class="plan-top-row">
+                <span class="plan-number">2. SMART</span>
+                <span class="plan-stage-badge stage-pmf">Producto Inicial (PMF)</span>
+              </div>
+              <h3 class="plan-name">“CV Inteligente”</h3>
+              <div class="plan-pricing">
+                <strong class="plan-price">~S/ 15 <small>/ mes</small></strong>
+                <span class="plan-model">Suscripción baja: ~S/ 15 / mes</span>
+              </div>
+              <p class="plan-objective"><strong>Objetivo principal:</strong> Generar hábito y retención mediante IA</p>
+            </div>
+            <div class="plan-card-body">
+              <span class="plan-features-label">FUNCIONALIDADES CLAVE</span>
+              <ul class="plan-features">
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Motor IA de optimización semántica</span></li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Tracker de progreso laboral</span></li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Alertas de vacantes de primer empleo</span></li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Historial de versiones del CV optimizado</span></li>
+              </ul>
+            </div>
+            <div class="plan-card-footer">
+              <a class="button button-mint full-width" href="#registro" data-register>Elegir Plan SMART <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+
+          <!-- 3. PRO -->
+          <article class="plan-card">
+            <div class="plan-card-header">
+              <div class="plan-top-row">
+                <span class="plan-number">3. PRO</span>
+                <span class="plan-stage-badge stage-growth">Plataforma en Crecimiento</span>
+              </div>
+              <h3 class="plan-name">“Red Profesional”</h3>
+              <div class="plan-pricing">
+                <strong class="plan-price">~S/ 25 <small>/ mes</small></strong>
+                <span class="plan-model">Suscripción media: ~S/ 25 / mes + Comisión por transacción P2P</span>
+              </div>
+              <p class="plan-objective"><strong>Objetivo principal:</strong> Monetización y consolidación del ecosistema</p>
+            </div>
+            <div class="plan-card-body">
+              <span class="plan-features-label">FUNCIONALIDADES CLAVE</span>
+              <ul class="plan-features">
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Sistema de Revisión de Pares (Peer-Review)</span></li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Comunidad P2P de egresados y grupos por carrera</span></li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Comisión por transacción</span></li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Sistema de reputación e insignias para Alumni/Mentores</span></li>
+              </ul>
+            </div>
+            <div class="plan-card-footer">
+              <a class="button button-navy full-width" href="#registro" data-register>Unirme a Plan PRO <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+
+          <!-- 4. ELITE -->
+          <article class="plan-card plan-card-elite">
+            <div class="plan-card-header">
+              <div class="plan-top-row">
+                <span class="plan-number">4. ELITE</span>
+                <span class="plan-stage-badge stage-elite">Ecosistema Inteligente</span>
+              </div>
+              <h3 class="plan-name">“Talento Imparable”</h3>
+              <div class="plan-pricing">
+                <strong class="plan-price">~S/ 40 <small>/ mes</small></strong>
+                <span class="plan-model">Suscripción alta: ~S/ 40 / mes + Comisión B2B por contratación</span>
+              </div>
+              <p class="plan-objective"><strong>Objetivo principal:</strong> Escalabilidad y diferenciación avanzada</p>
+            </div>
+            <div class="plan-card-body">
+              <span class="plan-features-label">FUNCIONALIDADES CLAVE</span>
+              <ul class="plan-features">
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Orquestador inteligente de empleabilidad y progreso</span></li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>IA Predictiva de tendencias de contratación y vacantes ocultas</span></li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Matching inteligente por sector</span></li>
+              </ul>
+            </div>
+            <div class="plan-card-footer">
+              <a class="button button-navy full-width" href="#registro" data-register>Solicitar Plan ELITE <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+        </div>
+
+        <div id="plans-matrix-panel" class="plans-matrix-wrap" role="tabpanel" aria-labelledby="view-matrix-btn" hidden>
+          <div class="table-responsive">
+            <table class="plans-matrix-table">
+              <thead>
+                <tr>
+                  <th scope="col">Plan Comercial</th>
+                  <th scope="col">Nombre / Enfoque</th>
+                  <th scope="col">Etapa del Producto</th>
+                  <th scope="col">Objetivo Principal</th>
+                  <th scope="col">Modelo de Ingresos</th>
+                  <th scope="col">Funcionalidades Clave</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong class="matrix-plan-tag">1. FREE</strong></td>
+                  <td><strong>"Primer Paso"</strong></td>
+                  <td><span class="matrix-stage">MVP (Validación)</span></td>
+                  <td>Captar usuarios y validar el problema</td>
+                  <td>Freemium Gratis (Adquisición)</td>
+                  <td>
+                    <ul class="matrix-list">
+                      <li>Registro de usuario y creación de perfil</li>
+                      <li>Carga de CV y Simulador ATS básico</li>
+                      <li>Recomendación de palabras clave faltantes</li>
+                      <li>Transformador de formato gráfico a texto estructurado</li>
+                      <li>Directorio de plantillas ATS pre-aprobadas</li>
+                      <li>Muro de comunidad abierto, sistema de referidos y retos de bienvenida</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong class="matrix-plan-tag">2. SMART</strong></td>
+                  <td><strong>"CV Inteligente"</strong></td>
+                  <td><span class="matrix-stage">Producto Inicial (PMF)</span></td>
+                  <td>Generar hábito y retención mediante IA</td>
+                  <td>Suscripción baja: ~S/ 15 / mes</td>
+                  <td>
+                    <ul class="matrix-list">
+                      <li>Motor IA de optimización semántica</li>
+                      <li>Tracker de progreso laboral</li>
+                      <li>Alertas de vacantes de primer empleo</li>
+                      <li>Historial de versiones del CV optimizado</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong class="matrix-plan-tag">3. PRO</strong></td>
+                  <td><strong>"Red Profesional"</strong></td>
+                  <td><span class="matrix-stage">Plataforma en Crecimiento</span></td>
+                  <td>Monetización y consolidación del ecosistema</td>
+                  <td>Suscripción media: ~S/ 25 / mes + Comisión por transacción P2P</td>
+                  <td>
+                    <ul class="matrix-list">
+                      <li>Sistema de Revisión de Pares (Peer-Review)</li>
+                      <li>Comunidad P2P de egresados y grupos por carrera</li>
+                      <li>Comisión por transacción</li>
+                      <li>Sistema de reputación e insignias para Alumni/Mentores</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong class="matrix-plan-tag">4. ELITE</strong></td>
+                  <td><strong>"Talento Imparable"</strong></td>
+                  <td><span class="matrix-stage">Ecosistema Inteligente</span></td>
+                  <td>Escalabilidad y diferenciación avanzada</td>
+                  <td>Suscripción alta: ~S/ 40 / mes + Comisión B2B por contratación</td>
+                  <td>
+                    <ul class="matrix-list">
+                      <li>Orquestador inteligente de empleabilidad y progreso</li>
+                      <li>IA Predictiva de tendencias de contratación y vacantes ocultas</li>
+                      <li>Matching inteligente por sector</li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="confidence-section" aria-labelledby="confidence-title"><div class="container"><div class="confidence-heading"><span class="eyebrow">CLARIDAD DESDE EL INICIO</span><h2 id="confidence-title">Explora con confianza.</h2></div><div class="confidence-grid"><article><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg><div><h3>Datos en privado</h3><p>El registro se guarda en un almacenamiento privado y no se publica en la página.</p></div></article><article><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg><div><h3>Ejemplos transparentes</h3><p>Los perfiles y recomendaciones son ilustrativos y están identificados.</p></div></article><article><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><div><h3>Tú decides</h3><p>Recibir consejos y novedades por correo es opcional; tú eliges al registrarte.</p></div></article></div></div></section>
 
     <section class="section blog-section" id="blog" aria-labelledby="blog-title">
-      <div class="container blog-resource"><span class="resource-icon"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg></span><div><span class="eyebrow">PARA SEGUIR APRENDIENDO</span><h2 id="blog-title">Más ideas para tu siguiente paso.</h2><p>Continúa explorando cómo presentar tu talento en el blog de VisibleTalent.</p></div><a class="resource-link" href="https://visibletalent.blogspot.com/" target="_blank" rel="noopener noreferrer">Visitar el blog <span aria-hidden="true">↗</span><span class="sr-only"> (se abre en otra pestaña)</span></a></div>
+      <div class="container">
+        <div class="section-intro">
+          <span class="eyebrow">PARA SEGUIR APRENDIENDO · BLOG VISIBLETALENT</span>
+          <h2 id="blog-title">Artículos y guías para tu primer empleo</h2>
+          <p>Lee nuestros artículos directamente aquí o explora el blog oficial conectado con <strong>visibletalent.blogspot.com</strong>.</p>
+        </div>
+
+        <div class="blog-toolbar">
+          <div class="plans-view-switcher" role="tablist" aria-label="Modo de lectura del blog">
+            <button type="button" id="blog-cards-tab" class="view-switch-btn active" role="tab" aria-selected="true" aria-controls="blog-cards-panel" data-blog-view="cards">Artículos destacados (Lectura en página)</button>
+            <button type="button" id="blog-embed-tab" class="view-switch-btn" role="tab" aria-selected="false" aria-controls="blog-embed-panel" data-blog-view="embed">Navegar Blog en vivo (Blogger)</button>
+          </div>
+          <a class="resource-link" href="https://visibletalent.blogspot.com/" target="_blank" rel="noopener noreferrer">Abrir blog en pestaña nueva <span aria-hidden="true">↗</span><span class="sr-only"> (se abre en otra pestaña)</span></a>
+        </div>
+
+        <div id="blog-cards-panel" role="tabpanel" aria-labelledby="blog-cards-tab">
+          <p id="blog-feed-status" class="blog-feed-status" aria-live="polite">Sincronizado con el blog de VisibleTalent · Selecciona un artículo para leerlo completo sin salir de la página.</p>
+          <div id="blog-posts-grid" class="blog-posts-grid">
+            <article class="blog-post-card">
+              <div class="blog-post-meta">
+                <span class="tag">GUÍA PRÁCTICA CV</span>
+                <time datetime="2026-11-01">VisibleTalent Blog</time>
+              </div>
+              <h3>Cómo transformar tus proyectos universitarios en experiencia atractiva para tu primer CV</h3>
+              <p>¿Sientes que tu CV está en blanco porque aún no has tenido un trabajo formal? Aprende el método Acción + Contexto + Aporte para presentar trabajos de curso, laboratorios y voluntariados.</p>
+              <div class="blog-post-actions">
+                <button type="button" class="button button-small button-navy" data-read-post="0">Leer artículo aquí <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+                <a class="blog-ext-link" href="https://visibletalent.blogspot.com/" target="_blank" rel="noopener noreferrer">Ver en Blogger ↗</a>
+              </div>
+            </article>
+
+            <article class="blog-post-card">
+              <div class="blog-post-meta">
+                <span class="tag tag-lilac">FILTROS ATS</span>
+                <time datetime="2026-11-05">VisibleTalent Blog</time>
+              </div>
+              <h3>Qué es un filtro ATS y por qué las plantillas con exceso de diseño pueden jugar en tu contra</h3>
+              <p>Descubre cómo leen los sistemas automatizados tu currículum en convocatorias de prácticas en Lima y qué estructura de texto facilita que un reclutador encuentre tus habilidades clave.</p>
+              <div class="blog-post-actions">
+                <button type="button" class="button button-small button-navy" data-read-post="1">Leer artículo aquí <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+                <a class="blog-ext-link" href="https://visibletalent.blogspot.com/" target="_blank" rel="noopener noreferrer">Ver en Blogger ↗</a>
+              </div>
+            </article>
+
+            <article class="blog-post-card">
+              <div class="blog-post-meta">
+                <span class="tag">PRIMER EMPLEO</span>
+                <time datetime="2026-11-09">VisibleTalent Blog</time>
+              </div>
+              <h3>Palabras clave en ofertas de prácticas: cómo conectar tu perfil con lo que pide la empresa</h3>
+              <p>Analizamos ejemplos reales de Marketing, Ingeniería de Sistemas y Administración para que identifiques las competencias técnicas y blandas que ya aplicaste sin exagerar ni inventar datos.</p>
+              <div class="blog-post-actions">
+                <button type="button" class="button button-small button-navy" data-read-post="2">Leer artículo aquí <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+                <a class="blog-ext-link" href="https://visibletalent.blogspot.com/" target="_blank" rel="noopener noreferrer">Ver en Blogger ↗</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div id="blog-embed-panel" class="blog-embed-wrap" role="tabpanel" aria-labelledby="blog-embed-tab" hidden>
+          <div class="blog-iframe-header">
+            <span><span class="status-dot"></span> Vista directa de <strong>https://visibletalent.blogspot.com/</strong></span>
+            <a href="https://visibletalent.blogspot.com/" target="_blank" rel="noopener noreferrer">Abrir en pantalla completa ↗</a>
+          </div>
+          <iframe class="blog-iframe" src="https://visibletalent.blogspot.com/" title="Blog oficial de VisibleTalent" loading="lazy"></iframe>
+        </div>
+      </div>
     </section>
 
     <section class="section faq-section" id="preguntas"><div class="container faq-grid"><div><span class="eyebrow">RESOLVAMOS TUS DUDAS</span><h2>Antes de dar<br>el primer paso.</h2><p>Claridad desde el comienzo,<br>también sobre lo que ofrecemos.</p><span class="faq-decoration" aria-hidden="true">↗</span></div><div class="faq-list">
@@ -153,8 +563,71 @@
     <section class="final-cta"><div class="container final-cta-inner"><div><span class="eyebrow">TU SIGUIENTE PASO EMPIEZA AQUÍ</span><h2>Tu talento merece verse.</h2><p>Regístrate y acompáñanos en el siguiente paso de VisibleTalent.</p></div><div class="final-action"><a class="button button-mint" href="#registro" data-register>Quiero mejorar mi CV <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><p>Registro gratis · Sin contraseña</p></div><span class="cta-star" aria-hidden="true">✳</span></div></section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-top"><div><a class="brand" href="#inicio" aria-label="VisibleTalent, inicio">Visible<span>Talent</span></a><p>Juntos, por carreras más visibles y exitosas</p></div><nav aria-label="Enlaces al pie"><a href="#como-funciona">Cómo funciona</a><a href="https://visibletalent.blogspot.com/" target="_blank" rel="noopener noreferrer">Nuestro blog ↗<span class="sr-only"> (se abre en otra pestaña)</span></a><a href="#preguntas">Preguntas frecuentes</a></nav></div><div class="container footer-bottom"><span>© <span id="current-year">2026</span> VisibleTalent.</span><span>Hecho para quienes están empezando. <span class="small-star">✳</span></span></div></footer>
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div>
+        <a class="brand" href="#inicio" aria-label="VisibleTalent, inicio">Visible<span>Talent</span></a>
+        <p>Juntos, por carreras más visibles y exitosas</p>
+        <div class="footer-socials" aria-label="Redes sociales en pie de página">
+          <a href="https://www.tiktok.com/@visibletalentdespega" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg class="icon" aria-hidden="true"><use href="#i-tiktok"/></svg> TikTok</a>
+          <a href="https://www.instagram.com/visibletalentdespega/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg> Instagram</a>
+          <a href="https://www.youtube.com/@visibletalentdespega" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg> YouTube</a>
+        </div>
+      </div>
+      <nav aria-label="Enlaces al pie">
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#webinar">Webinar</a>
+        <a href="#planes">Planes</a>
+        <a href="https://visibletalent.blogspot.com/" target="_blank" rel="noopener noreferrer">Nuestro blog ↗<span class="sr-only"> (se abre en otra pestaña)</span></a>
+        <a href="#preguntas">Preguntas frecuentes</a>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="current-year">2026</span> VisibleTalent.</span>
+      <span>Hecho para quienes están empezando. <span class="small-star">✳</span></span>
+    </div>
+  </footer>
 
   <dialog id="demo-dialog" class="demo-dialog" aria-labelledby="demo-title"><button class="dialog-close" data-close-dialog aria-label="Cerrar demostración">×</button><span class="eyebrow">CONOCE LA EXPERIENCIA</span><h2 id="demo-title">Ideas para que tu CV<br>cuente más de ti.</h2><p class="dialog-intro">Elige un perfil de ejemplo y descubre cómo mejorar la forma de presentar sus proyectos y habilidades.</p><div id="demo-selection"><label class="field-label" for="demo-profile">Perfil y oportunidad de ejemplo</label><select id="demo-profile"><option value="marketing">Estudiante de Marketing → Practicante de Marketing</option><option value="desarrollo">Egresado de Sistemas → Practicante de Desarrollo</option><option value="administracion">Estudiante de Administración → Practicante de Operaciones</option></select><div class="sample-profile" id="sample-profile"></div><button class="button button-navy full-width" id="run-demo">Ver recomendaciones de ejemplo <svg class="icon"><use href="#i-arrow"/></svg></button></div><div id="demo-result" hidden aria-live="polite"></div><p class="demo-notice"><svg class="icon"><use href="#i-lock"/></svg> Datos ficticios. Sin carga de archivos ni análisis con IA.</p></dialog>
+
+  <dialog id="app-dialog" class="demo-dialog app-dialog" aria-labelledby="app-dialog-title">
+    <button class="dialog-close" data-close-dialog aria-label="Cerrar ventana de descarga">×</button>
+    <span class="eyebrow">VISIBLETALENT MÓVIL</span>
+    <h2 id="app-dialog-title">Lleva tu empleabilidad en el bolsillo.</h2>
+    <p class="dialog-intro">Descarga la app de VisibleTalent o regístrate para recibir el enlace de acceso anticipado en Android y iOS con alertas de vacantes de primer empleo y tracker de CV.</p>
+    <div class="app-store-badges">
+      <a class="store-btn" href="#registro" data-register data-close-dialog>
+        <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+        <div>
+          <small>ACCESO ANTICIPADO</small>
+          <strong>Google Play (Android)</strong>
+        </div>
+      </a>
+      <a class="store-btn" href="#registro" data-register data-close-dialog>
+        <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+        <div>
+          <small>ACCESO ANTICIPADO</small>
+          <strong>App Store (iOS)</strong>
+        </div>
+      </a>
+    </div>
+    <div class="sample-profile">
+      <strong>¿Qué incluye la App de VisibleTalent?</strong>
+      <p>• Simulador ATS móvil y alertas instantáneas de convocatorias de prácticas.<br>• Acceso al Muro de Comunidad P2P y recordatorios de nuestros Webinars en vivo.</p>
+    </div>
+    <a class="button button-navy full-width" href="#registro" data-register data-close-dialog>Registrarme para obtener el enlace de descarga <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </dialog>
+
+  <dialog id="blog-reader-dialog" class="demo-dialog blog-reader-dialog" aria-labelledby="blog-reader-title">
+    <button class="dialog-close" data-close-dialog aria-label="Cerrar artículo">×</button>
+    <span class="eyebrow" id="blog-reader-category">BLOG VISIBLETALENT</span>
+    <h2 id="blog-reader-title">Artículo del Blog</h2>
+    <p class="blog-reader-date" id="blog-reader-date"></p>
+    <div id="blog-reader-body" class="blog-reader-body"></div>
+    <div class="blog-reader-footer">
+      <a class="button button-navy" href="#registro" data-register data-close-dialog>Registrarme gratis en VisibleTalent <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a id="blog-reader-url" class="button button-outline" href="https://visibletalent.blogspot.com/" target="_blank" rel="noopener noreferrer">Ver publicación original en Blogger ↗</a>
+    </div>
+  </dialog>
 </body>
 </html>
