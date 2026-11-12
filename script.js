@@ -109,6 +109,7 @@ function resetDemo() {
   result.hidden = true;
   result.innerHTML = '';
   renderProfile();
+  demoDialog.scrollTop = 0;
 }
 function openDialog(dialog, trigger) {
   dialogTrigger = trigger;
@@ -128,7 +129,8 @@ document.querySelectorAll('dialog').forEach((dialog) => {
   });
   dialog.addEventListener('close', () => {
     document.body.classList.remove('modal-open');
-    dialogTrigger?.focus();
+    const returnTarget = dialogTrigger?.getClientRects().length ? dialogTrigger : menuToggle;
+    returnTarget?.focus();
   });
 });
 profileSelect.addEventListener('change', renderProfile);
@@ -147,3 +149,60 @@ document.querySelector('#run-demo').addEventListener('click', () => {
 });
 document.querySelector('#current-year').textContent = String(new Date().getFullYear());
 renderProfile();
+
+// El formulario solo confirma el registro después de recibir la respuesta del servidor.
+const registrationForm = document.querySelector('#registration-form');
+const registrationSuccess = document.querySelector('#registration-success');
+const registrationError = document.querySelector('#registration-error');
+const registrationSubmit = document.querySelector('#registration-submit');
+let registrationPending = false;
+
+document.querySelectorAll('[data-register]').forEach(link => link.addEventListener('click', event => {
+  event.preventDefault();
+  closeMenu();
+  document.querySelector('#registro').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
+  const focusTarget = registrationForm.hidden ? registrationSuccess : document.querySelector('#registration-name');
+  focusTarget.focus({ preventScroll: true });
+}));
+
+registrationForm.addEventListener('submit', async event => {
+  event.preventDefault();
+  if (registrationPending || !registrationForm.reportValidity()) return;
+  registrationPending = true;
+  registrationError.hidden = true;
+  registrationForm.setAttribute('aria-busy', 'true');
+  registrationSubmit.disabled = true;
+  registrationSubmit.querySelector('span').textContent = 'Guardando tu registro…';
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 20000);
+  try {
+    const response = await fetch('/api/registro', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: controller.signal,
+      body: JSON.stringify({
+        name: registrationForm.elements.name.value.trim(),
+        email: registrationForm.elements.email.value.trim(),
+        career: registrationForm.elements.career.value.trim(),
+        privacyAccepted: registrationForm.elements.privacyAccepted.checked,
+        marketingConsent: registrationForm.elements.marketingConsent.checked,
+        companyWebsite: registrationForm.elements.companyWebsite.value,
+      }),
+    });
+    const data = await response.json().catch(() => null);
+    if (!response.ok || data?.ok !== true) throw new Error(data?.error || 'No pudimos guardar tu registro. Inténtalo otra vez en unos momentos.');
+    registrationForm.hidden = true;
+    registrationSuccess.hidden = false;
+    registrationForm.reset();
+    registrationSuccess.focus();
+  } catch (error) {
+    registrationError.textContent = error.name === 'AbortError' || error instanceof TypeError
+      ? 'No pudimos confirmar tu registro. Revisa tu conexión y vuelve a intentarlo.'
+      : error.message;
+    registrationError.hidden = false;
+  } finally {
+    clearTimeout(timeout);
+    registrationPending = false;
+    registrationSubmit.disabled = false;
+    registrationSubmit.querySelector('span').textContent = 'Registrarme gratis';
+    registrationForm.removeAttribute('aria-busy');
+  }
+});
