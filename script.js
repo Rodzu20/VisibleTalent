@@ -374,3 +374,149 @@ registrationForm.addEventListener('submit', async event => {
     registrationForm.removeAttribute('aria-busy');
   }
 });
+
+// === NEXO · Asistente IA Flotante de VisibleTalent ===
+const nexoToggle = document.querySelector('#nexo-toggle');
+const nexoPanel = document.querySelector('#nexo-panel');
+const nexoClose = document.querySelector('#nexo-close');
+const nexoReset = document.querySelector('#nexo-reset');
+const nexoMessages = document.querySelector('#nexo-messages');
+const nexoForm = document.querySelector('#nexo-form');
+const nexoInput = document.querySelector('#nexo-input');
+
+const nexoWelcomeHtml = `<p>¡Hola! Soy <strong>Nexo</strong> ✨, la inteligencia artificial de <strong>VisibleTalent</strong>.</p><p>Estoy aquí para ayudarte a estructurar tu CV para prácticas o primer empleo, explicarte nuestros planes o revisar una experiencia académica usando la fórmula <strong>Acción + Contexto + Aporte</strong>. ¿En qué te ayudo hoy?</p>`;
+
+function appendNexoMessage(html, role = 'bot') {
+  if (!nexoMessages) return null;
+  const bubble = document.createElement('div');
+  bubble.className = `nexo-msg ${role === 'user' ? 'nexo-msg-user' : 'nexo-msg-bot'}`;
+  bubble.innerHTML = html;
+  nexoMessages.appendChild(bubble);
+  nexoMessages.scrollTop = nexoMessages.scrollHeight;
+  return bubble;
+}
+
+function initNexoChat() {
+  if (!nexoMessages) return;
+  nexoMessages.innerHTML = '';
+  appendNexoMessage(nexoWelcomeHtml, 'bot');
+}
+initNexoChat();
+
+function setNexoOpen(open) {
+  if (!nexoPanel || !nexoToggle) return;
+  nexoPanel.hidden = !open;
+  nexoToggle.setAttribute('aria-expanded', String(open));
+  if (open) {
+    nexoMessages.scrollTop = nexoMessages.scrollHeight;
+    nexoInput?.focus();
+  } else {
+    nexoToggle.focus();
+  }
+}
+
+nexoToggle?.addEventListener('click', () => {
+  const isOpen = nexoToggle.getAttribute('aria-expanded') === 'true';
+  setNexoOpen(!isOpen);
+});
+nexoClose?.addEventListener('click', () => setNexoOpen(false));
+nexoReset?.addEventListener('click', () => {
+  initNexoChat();
+  nexoInput?.focus();
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && nexoPanel && !nexoPanel.hidden) {
+    setNexoOpen(false);
+  }
+});
+
+function buildNexoReply(rawText) {
+  const text = rawText.toLowerCase(). normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+  if (text.includes('plan') || text.includes('precio') || text.includes('costo') || text.includes('smart') || text.includes('pro') || text.includes('elite') || text.includes('free')) {
+    return `<p>En <strong>VisibleTalent</strong> tenemos 4 planes según tu etapa:</p>
+      <ul>
+        <li><strong>1. FREE "Primer Paso" (Gratis):</strong> Simulador ATS básico, palabras clave faltantes, plantillas ATS y muro de comunidad.</li>
+        <li><strong>2. SMART "CV Inteligente" (~S/ 15/mes):</strong> Motor IA de optimización semántica, tracker laboral y alertas de primer empleo.</li>
+        <li><strong>3. PRO "Red Profesional" (~S/ 25/mes):</strong> Revisión de pares (Peer-Review), comunidad P2P por carrera y mentores Alumni.</li>
+        <li><strong>4. ELITE "Talento Imparable" (~S/ 40/mes):</strong> Orquestador inteligente, IA predictiva de vacantes ocultas y matching por sector.</li>
+      </ul>
+      <a class="nexo-msg-action" href="#planes">Ver comparativa de planes →</a>`;
+  }
+
+  if (text.includes('ats') || text.includes('filtro') || text.includes('plantilla') || text.includes('formato')) {
+    return `<p>Un <strong>filtro ATS</strong> (Applicant Tracking System) es el software que lee tu CV antes que el reclutador.</p>
+      <p><strong>Consejo de Nexo:</strong> Evita barras de porcentaje, tablas flotantes o exportar tu CV como imagen. Usa texto estructurado de una sola columna y menciona las herramientas exactas que pide la vacante (ej. <em>Excel, JavaScript, Análisis de audiencia</em>).</p>
+      <a class="nexo-msg-action" href="#planes">Ver Simulador ATS en Plan FREE →</a>`;
+  }
+
+  if (text.includes('webinar') || text.includes('taller') || text.includes('vivo') || text.includes('evento')) {
+    return `<p>Nuestro próximo <strong>Webinar gratuito en vivo</strong> es:</p>
+      <p>🎥 <strong>“Cómo superar filtros ATS y destacar tus proyectos académicos sin experiencia laboral previa”</strong><br>📅 Jueves 20 · 7:00 p. m. (Hora Perú) vía YouTube Live y Zoom.</p>
+      <p>Incluye plantilla ATS descargable y checklist de verbos de impacto.</p>
+      <a class="nexo-msg-action" href="#webinar">Ir a la sección del Webinar →</a>`;
+  }
+
+  if (text.includes('app') || text.includes('descarga') || text.includes('celular') || text.includes('android') || text.includes('ios')) {
+    return `<p>¡Con la <strong>App móvil de VisibleTalent</strong> recibirás alertas de prácticas en Lima, seguimiento de tu CV y recordatorios de webinars!</p>
+      <p>Haz clic en el botón superior <strong>"Descargar la App"</strong> o regístrate para obtener tu enlace de acceso anticipado en Android e iOS.</p>
+      <a class="nexo-msg-action" href="#registro">Registrarme para descargar →</a>`;
+  }
+
+  if (text.includes('marketing') || text.includes('sistemas') || text.includes('software') || text.includes('administracion') || text.includes('proyecto') || text.includes('logro') || text.includes('cv') || text.includes('experiencia')) {
+    return `<p>¡Transformemos tu experiencia con mi método <strong>Acción + Contexto + Aporte</strong>! Mira este ejemplo:</p>
+      <p>❌ <em>Antes:</em> “Hice un proyecto universitario en grupo.”</p>
+      <p>✅ <em>Versión Nexo IA:</em> “Estructuré y ejecuté un proyecto aplicado para un caso real de mi carrera, integrando análisis de datos, herramientas técnicas y entrega de propuestas medibles.”</p>
+      <p>Si quieres, <strong>escríbeme una tarea o curso que hiciste</strong> y te ayudo a redactarla, o explora la demo interactiva.</p>
+      <a class="nexo-msg-action" href="#ejemplo">Ver ejemplo Antes / Después →</a>`;
+  }
+
+  if (text.includes('registr') || text.includes('empezar') || text.includes('cuenta') || text.includes('gratis')) {
+    return `<p>¡Registrarte en VisibleTalent es <strong>100% gratis y sin contraseña</strong>! Solo necesitas tu nombre y correo para empezar con el Plan FREE "Primer Paso".</p>
+      <a class="nexo-msg-action" href="#registro">Ir al registro gratuito →</a>`;
+  }
+
+  // Si el usuario pega una frase larga (ej. de su CV), Nexo la optimiza con la estructura Acción + Contexto + Aporte
+  if (rawText.trim().length > 22) {
+    const cleanInput = escapeHtml(rawText.trim());
+    return `<p>He analizado tu frase: <em>“${cleanInput}”</em> ✨</p>
+      <p>Para que tenga más impacto frente a un reclutador y un filtro ATS, te sugiero estructurarla así:</p>
+      <p>✅ <strong>Propuesta Nexo:</strong> “Desarrollé y ejecuté [${cleanInput}], aplicando herramientas técnicas de mi carrera, documentando el proceso y presentando entregables concretos orientados a resultados.”</p>
+      <p>💡 <em>Tip extra:</em> Añade al final qué herramienta usaste (por ejemplo: Excel, Canva, Python, SQL, Power BI o Google Analytics).</p>`;
+  }
+
+  return `<p>¡Entendido! Como <strong>Nexo IA</strong> puedo ayudarte con:</p>
+    <ul>
+      <li>✨ Redactar tus proyectos académicos o voluntariados con impacto.</li>
+      <li>📄 Explicarte cómo superar filtros ATS en convocatorias de Lima.</li>
+      <li>🚀 Recomendarte entre los planes <strong>FREE, SMART, PRO o ELITE</strong>.</li>
+      <li>🎥 Darte los detalles de nuestro próximo <strong>Webinar en vivo</strong>.</li>
+    </ul>
+    <p>Escribe una frase de tu CV o elige una de las opciones rápidas de abajo.</p>`;
+}
+
+function handleNexoSend(userMessage) {
+  const trimmed = userMessage.trim();
+  if (!trimmed) return;
+  appendNexoMessage(`<p>${escapeHtml(trimmed)}</p>`, 'user');
+  if (nexoInput) nexoInput.value = '';
+  const typingBubble = appendNexoMessage(`<span class="nexo-typing">Nexo está analizando tu consulta…</span>`, 'bot');
+  setTimeout(() => {
+    if (typingBubble) {
+      typingBubble.innerHTML = buildNexoReply(trimmed);
+      nexoMessages.scrollTop = nexoMessages.scrollHeight;
+    }
+  }, 420);
+}
+
+nexoForm?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  handleNexoSend(nexoInput.value);
+});
+
+document.querySelectorAll('[data-nexo-prompt]').forEach((chip) => {
+  chip.addEventListener('click', () => {
+    handleNexoSend(chip.dataset.nexoPrompt);
+  });
+});

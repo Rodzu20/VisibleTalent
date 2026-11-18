@@ -629,5 +629,57 @@
       <a id="blog-reader-url" class="button button-outline" href="https://visibletalent.blogspot.com/" target="_blank" rel="noopener noreferrer">Ver publicación original en Blogger ↗</a>
     </div>
   </dialog>
+
+  <!-- Nexo · Asistente IA Flotante -->
+  <div class="nexo-widget" id="nexo-widget" aria-label="Asistente virtual Nexo">
+    <section id="nexo-panel" class="nexo-panel" role="dialog" aria-labelledby="nexo-title" aria-modal="false" hidden>
+      <header class="nexo-header">
+        <div class="nexo-identity">
+          <span class="nexo-avatar" aria-hidden="true">
+            <svg class="icon"><use href="#i-spark"/></svg>
+          </span>
+          <div>
+            <div class="nexo-title-row">
+              <strong id="nexo-title">Nexo</strong>
+              <span class="nexo-badge">IA</span>
+            </div>
+            <span class="nexo-status"><span class="nexo-online-dot"></span> En línea · Copiloto de Empleabilidad</span>
+          </div>
+        </div>
+        <div class="nexo-header-actions">
+          <button type="button" class="nexo-clear-btn" id="nexo-reset" title="Reiniciar conversación" aria-label="Reiniciar conversación">↺</button>
+          <button type="button" class="nexo-close-btn" id="nexo-close" aria-label="Minimizar chat de Nexo">×</button>
+        </div>
+      </header>
+
+      <div class="nexo-messages" id="nexo-messages" aria-live="polite"></div>
+
+      <div class="nexo-suggestions" id="nexo-suggestions" aria-label="Preguntas frecuentes para Nexo">
+        <button type="button" class="nexo-chip" data-nexo-prompt="¿Cómo mejoro un proyecto académico en mi CV?">✨ Mejorar logro de mi CV</button>
+        <button type="button" class="nexo-chip" data-nexo-prompt="¿Qué plan de VisibleTalent me recomiendas?">🚀 ¿Qué plan me conviene?</button>
+        <button type="button" class="nexo-chip" data-nexo-prompt="¿Cómo funcionan los filtros ATS?">📄 ¿Qué es un filtro ATS?</button>
+        <button type="button" class="nexo-chip" data-nexo-prompt="Cuéntame sobre el próximo Webinar en vivo">🎥 Próximo Webinar</button>
+      </div>
+
+      <form class="nexo-input-bar" id="nexo-form" autocomplete="off">
+        <label class="sr-only" for="nexo-input">Escribe tu consulta para Nexo</label>
+        <input id="nexo-input" name="message" type="text" maxlength="320" placeholder="Pregúntale a Nexo o pega una frase de tu CV…" required>
+        <button type="submit" class="nexo-send-btn" id="nexo-send" aria-label="Enviar mensaje a Nexo">
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </button>
+      </form>
+    </section>
+
+    <button type="button" class="nexo-bubble" id="nexo-toggle" aria-expanded="false" aria-controls="nexo-panel" aria-label="Abrir chat con Nexo, asistente IA de VisibleTalent">
+      <span class="nexo-bubble-pulse" aria-hidden="true"></span>
+      <span class="nexo-bubble-icon" aria-hidden="true">
+        <svg class="icon"><use href="#i-spark"/></svg>
+      </span>
+      <span class="nexo-bubble-text">
+        <small>ASISTENTE IA</small>
+        <strong>Hablar con Nexo</strong>
+      </span>
+    </button>
+  </div>
 </body>
 </html>
