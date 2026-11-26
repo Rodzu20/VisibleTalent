@@ -47,7 +47,7 @@ Para probar el registro utiliza este servidor, no Live Server ni la apertura dir
 
 El header utiliza enlaces normales entre páginas. Cada URL funciona al abrirla directamente, recargarla o navegar con Atrás/Adelante. Los antiguos enlaces `/#planes`, `/#blog`, `/#webinar` y `/#registro` redirigen a su página correspondiente. Cada vista tiene su propio título principal y metadatos.
 
-Inicio incluye misión, visión y valores. No se han añadido video de presentación ni información personal de los integrantes del equipo. La página móvil identifica la app como propuesta en preparación: los accesos Android e iOS registran interés, no simulan una descarga real de una app publicada.
+Inicio incluye propuesta de valor, misión, visión, valores y Nuestro equipo, presentado por áreas de trabajo: producto y experiencia, tecnología y desarrollo, contenido y comunidad. No se han añadido video de presentación ni información personal de los integrantes. La página móvil identifica la app como propuesta en preparación: los accesos Android e iOS registran interés, no simulan una descarga real de una app publicada.
 
 ## Blog
 

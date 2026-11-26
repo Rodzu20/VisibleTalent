@@ -25,12 +25,13 @@ test('la prueba incluye un único formulario de ejemplo dentro de la página', (
   assert.ok(html.includes('class="demo-inline"'));
   assert.equal(html.includes('<!-- DEMO_INLINE -->'), false);
 });
-test('Inicio presenta misión, visión y valores sin video ni información del equipo', () => {
+test('Inicio presenta propuesta de valor, misión, visión y equipo sin video', () => {
   const home = renderPage(template, '/');
   assert.ok(home.includes('Nuestra misión'));
   assert.ok(home.includes('Nuestra visión'));
   assert.ok(home.includes('NUESTROS VALORES'));
-  assert.equal(home.includes('id="equipo"'), false);
+  assert.ok(home.includes('NUESTRA PROPUESTA DE VALOR'));
+  assert.ok(home.includes('id="equipo"'));
   assert.equal(/<video|youtube\.com\/embed/.test(home), false);
   assert.equal(home.includes('id="planes"'), false);
   assert.equal(home.includes('id="registro"'), false);
