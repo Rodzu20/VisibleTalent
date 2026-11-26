@@ -9,7 +9,7 @@
     "start": "node --env-file-if-exists=.env.local server.mjs",
     "build": "node build.mjs",
     "check": "node --check script.js && node --check server.mjs && node --check build.mjs && node --check api/registro.js",
-    "test": "node --test tests/registration.test.mjs",
+    "test": "node --test tests/*.test.mjs",
     "export:registros": "node --env-file-if-exists=.env.local scripts/export-registrations.mjs",
     "deploy": "npx --yes vercel@latest deploy --prod --project visibletalent"
   },

@@ -1,5 +1,9 @@
 const icon = (name) => `<svg class="icon" aria-hidden="true"><use href="#i-${name}"/></svg>`;
 
+// Mantiene útiles los enlaces antiguos que apuntaban a secciones de la landing.
+const legacyPages = { '#planes': '/planes', '#blog': '/blog', '#webinar': '/webinar', '#registro': '/registro', '#prueba-gratuita': '/prueba-gratuita', '#descargar-app': '/descargar-app' };
+if (location.pathname === '/' && legacyPages[location.hash]) location.replace(legacyPages[location.hash] + location.search);
+
 // Todos los datos de la demo son ficticios y se muestran sin procesamiento remoto.
 const reportPanels = {
   resumen: `<div class="score-summary"><div class="score-ring"><div><strong>78<span style="font-size:12px;letter-spacing:0">/100</span></strong><small>Índice ilustrativo</small></div></div><div class="score-copy"><strong>Vas por buen camino</strong><p>Tu CV tiene una buena base. Hay oportunidades para contar mejor tus proyectos.</p></div></div><div class="report-recommendation">${icon('spark')}<div><strong>Tu siguiente mejora</strong><p>Explica tu aporte en el proyecto de campaña digital.</p></div></div>`,
@@ -34,7 +38,7 @@ tabs.forEach((tab, index) => {
     }
   });
 });
-activateTab(tabs[0]);
+if (tabs.length) activateTab(tabs[0]);
 
 const menuToggle = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#main-nav');
@@ -288,7 +292,7 @@ window.handleVisibleTalentBlogger = function (data) {
 const bloggerScript = document.createElement('script');
 bloggerScript.src = 'https://visibletalent.blogspot.com/feeds/posts/default?alt=json-in-script&max-results=6&callback=handleVisibleTalentBlogger';
 bloggerScript.async = true;
-document.head.appendChild(bloggerScript);
+if (blogPostsGrid) document.head.appendChild(bloggerScript);
 document.querySelectorAll('dialog').forEach((dialog) => {
   dialog.querySelectorAll('[data-close-dialog]').forEach((button) => button.addEventListener('click', () => dialog.close()));
   dialog.addEventListener('click', (event) => {
@@ -326,6 +330,8 @@ const registrationSubmit = document.querySelector('#registration-submit');
 let registrationPending = false;
 
 document.querySelectorAll('[data-register]').forEach(link => link.addEventListener('click', event => {
+  // En otras páginas se conserva la navegación normal hacia /registro.
+  if (!registrationForm || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
   event.preventDefault();
   closeMenu();
   document.querySelector('#registro').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
@@ -333,7 +339,7 @@ document.querySelectorAll('[data-register]').forEach(link => link.addEventListen
   focusTarget.focus({ preventScroll: true });
 }));
 
-registrationForm.addEventListener('submit', async event => {
+registrationForm?.addEventListener('submit', async event => {
   event.preventDefault();
   if (registrationPending || !registrationForm.reportValidity()) return;
   registrationPending = true;

@@ -1,6 +1,6 @@
 # VisibleTalent
 
-Landing page del proyecto VisibleTalent. HTML, CSS y JavaScript con una función de registro y almacenamiento privado en Vercel Blob.
+Sitio de VisibleTalent con páginas independientes, demostración de recomendaciones y registro privado en Vercel Blob. HTML, CSS y JavaScript, sin framework.
 
 Código fuente: https://github.com/Rodzu20/VisibleTalent
 
@@ -20,7 +20,9 @@ Para probar el registro utiliza este servidor, no Live Server ni la apertura dir
 
 ## Archivos
 
-- `index.html`: contenido y secciones de la landing.
+- `index.html`: plantilla compartida, cabecera, pie y secciones existentes.
+- `content/`: presentación de Inicio, prueba gratuita y vista móvil.
+- `lib/pages.mjs`: selecciona el contenido, título y metadatos de cada URL; se utiliza tanto en desarrollo como en la compilación.
 - `styles.css`: colores, tipografía, componentes y adaptación a móvil.
 - `script.js`: pestañas del reporte, menú móvil, envío del formulario y demostración de recomendaciones.
 - `api/registro.js`: función de Vercel que recibe los registros.
@@ -31,10 +33,25 @@ Para probar el registro utiliza este servidor, no Live Server ni la apertura dir
 - `server.mjs`: servidor local de archivos públicos.
 - `build.mjs`: prepara los archivos públicos en `dist/` para publicación.
 
+## Páginas y navegación
+
+| URL | Vista |
+| --- | --- |
+| `/` | Inicio: presentación, misión, visión, valores y beneficios |
+| `/planes` | Planes y matriz comparativa |
+| `/blog` | Artículos y acceso al blog de Blogger |
+| `/webinar` | Información del taller de ejemplo |
+| `/prueba-gratuita` | Demostración interactiva dentro de la página |
+| `/descargar-app` | Presentación móvil y registro de interés |
+| `/registro` | Formulario real y confirmación de guardado |
+
+El header utiliza enlaces normales entre páginas. Cada URL funciona al abrirla directamente, recargarla o navegar con Atrás/Adelante. Los antiguos enlaces `/#planes`, `/#blog`, `/#webinar` y `/#registro` redirigen a su página correspondiente. Cada vista tiene su propio título principal y metadatos.
+
+Inicio incluye misión, visión y valores. No se han añadido video de presentación ni información personal de los integrantes del equipo. La página móvil identifica la app como propuesta en preparación: los accesos Android e iOS registran interés, no simulan una descarga real de una app publicada.
+
 ## Blog
 
-El apartado complementario del blog y el enlace del pie llevan a https://visibletalent.blogspot.com/ en una pestaña nueva. La portada concentra la acción en explorar un ejemplo gratuito de recomendaciones para el CV.
-El header incluye acceso directo a Inicio, Beneficios, Cómo funciona, Blog y Preguntas, además del botón de registro. El enlace Blog abre directamente el blog en una pestaña nueva.
+El enlace Blog del header abre `/blog`. Esta página conserva los artículos, el lector y la conexión con https://visibletalent.blogspot.com/. Los enlaces a la publicación original abren Blogger en una pestaña nueva.
 
 ## Diseño
 
@@ -53,7 +70,7 @@ npm run check
 npm run build
 ```
 
-`dist/` contiene únicamente los archivos que debe servir el hosting. La configuración de Sites se conserva en `.openai/hosting.json`; no hay credenciales en ese archivo.
+`dist/` contiene siete documentos HTML y los recursos públicos. Vercel utiliza `cleanUrls` para servir, por ejemplo, `planes.html` como `/planes`. La configuración de Sites se conserva en `.openai/hosting.json`; no hay credenciales en ese archivo.
 
 ## Publicación en Vercel
 
@@ -71,7 +88,7 @@ Si la sesión caduca, ejecuta `npx --yes vercel@latest login`. Durante la compil
 
 La página incluye una demostración con tres perfiles ficticios y un formulario que sí guarda los datos de registro. No analiza CV reales ni crea cuentas de acceso con contraseña. Los indicadores y recomendaciones de la demostración están identificados como ilustrativos.
 
-La acción principal es registrarse mediante nombre y correo, con carrera opcional. Los enlaces «Quiero mejorar mi CV» y «Registrarme gratis» llevan a `#registro`. La aceptación para guardar el registro es obligatoria; recibir consejos y novedades por correo es una opción separada, desmarcada por defecto. Tras guardar se muestra la confirmación y el acceso a la demo. También se puede ver un ejemplo antes de registrarse.
+La acción principal es registrarse mediante nombre y correo, con carrera opcional. Los enlaces de registro llevan a `/registro`. La aceptación para guardar el registro es obligatoria; recibir consejos y novedades por correo es una opción separada, desmarcada por defecto. Tras guardar se muestra la confirmación y el acceso a `/prueba-gratuita`. También se puede explorar la prueba antes de registrarse.
 
 ## Consultar y exportar los registros
 

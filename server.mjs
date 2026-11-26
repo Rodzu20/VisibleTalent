@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises';
 import { dirname, extname, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import registrationHandler from './api/registro.js';
+import { renderPage, normalizePagePath, PAGE_ROUTES, loadPageTemplate } from './lib/pages.mjs';
 
 const root = dirname(fileURLToPath(import.meta.url));
 const port = Number(process.env.PORT || 5173);
@@ -21,6 +22,13 @@ const server = createServer(async (req, res) => {
   }
   try {
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
+    const pagePath = pathname === '/index.html' ? '/' : normalizePagePath(pathname);
+    if (PAGE_ROUTES[pagePath]) {
+      const html = renderPage(await loadPageTemplate(root), pagePath);
+      res.writeHead(200, { 'Content-Type': mime['.html'], 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' });
+      res.end(req.method === 'HEAD' ? undefined : html);
+      return;
+    }
     const relative = pathname === '/' ? 'index.html' : pathname.replace(/^\/+/, '');
     const path = resolve(root, relative);
     if (!publicFiles.has(relative) || !path.startsWith(root + sep)) {
