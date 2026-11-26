@@ -39,7 +39,7 @@ Para probar el registro utiliza este servidor, no Live Server ni la apertura dir
 | --- | --- |
 | `/` | Inicio: presentación, beneficios, funcionamiento y ejemplo |
 | `/equipo` | Sobre VisibleTalent: misión, visión, propuesta de valor, valores e integrantes |
-| `/planes` | Planes y matriz comparativa |
+| `/planes` | Tarjetas de planes comerciales |
 | `/blog` | Artículos y acceso al blog de Blogger |
 | `/webinar` | Información del taller de ejemplo |
 | `/prueba-gratuita` | Demostración interactiva dentro de la página |

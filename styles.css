@@ -344,17 +344,6 @@ select{font-size:14px;min-height:50px;border-radius:6px}
 .plan-features li .icon{width:16px;height:16px;color:#2e6fa7;margin-top:3px;flex-shrink:0}
 .plan-card-footer{margin-top:24px}
 
-/* Matriz comparativa de planes */
-.plans-matrix-wrap{margin-top:34px}
-.table-responsive{overflow-x:auto;border:1px solid #cfe0f0;border-radius:14px;box-shadow:5px 6px 0 #e4ecf5;background:#fff}
-.plans-matrix-table{width:100%;border-collapse:collapse;min-width:860px;text-align:left;font-size:13px}
-.plans-matrix-table th{background:#183454;color:#fff;padding:16px 18px;font-size:12px;font-weight:700;letter-spacing:.3px}
-.plans-matrix-table td{padding:18px;border-top:1px solid #dce5ef;vertical-align:top;line-height:1.65;color:#334b65}
-.plans-matrix-table tbody tr:nth-child(even){background:#f8fbff}
-.matrix-plan-tag{display:inline-block;padding:4px 9px;border-radius:6px;background:#eaf2fb;color:#183454;font-family:ui-monospace,'Courier New',monospace;font-size:11px}
-.matrix-stage{display:inline-block;padding:3px 8px;border-radius:999px;background:#efeaf9;color:#583f7e;font-size:11px;font-weight:700}
-.matrix-list{margin:0;padding-left:17px;display:grid;gap:5px}
-
 /* Footer socials & App modal */
 .footer-socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
 .footer-socials a{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:#eef4fb;border:1px solid #d5e2f0;font-size:12px;font-weight:600;color:var(--ink)}

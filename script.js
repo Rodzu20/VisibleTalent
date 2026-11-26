@@ -130,24 +130,6 @@ document.querySelectorAll('[data-open-app-modal]').forEach((button) => button.ad
   if (appDialog) openDialog(appDialog, button);
 }));
 
-const planViewButtons = [...document.querySelectorAll('[data-plan-view]')];
-const plansCardsPanel = document.querySelector('#plans-cards-panel');
-const plansMatrixPanel = document.querySelector('#plans-matrix-panel');
-planViewButtons.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const view = btn.dataset.planView;
-    planViewButtons.forEach((item) => {
-      const active = item === btn;
-      item.classList.toggle('active', active);
-      item.setAttribute('aria-selected', String(active));
-    });
-    if (plansCardsPanel && plansMatrixPanel) {
-      plansCardsPanel.hidden = view !== 'cards';
-      plansMatrixPanel.hidden = view !== 'matrix';
-    }
-  });
-});
-
 // Blog: vista en tarjetas + lector dentro de la página + sincronización automática con Blogger
 const blogViewButtons = [...document.querySelectorAll('[data-blog-view]')];
 const blogCardsPanel = document.querySelector('#blog-cards-panel');
