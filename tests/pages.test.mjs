@@ -25,14 +25,18 @@ test('la prueba incluye un único formulario de ejemplo dentro de la página', (
   assert.ok(html.includes('class="demo-inline"'));
   assert.equal(html.includes('<!-- DEMO_INLINE -->'), false);
 });
-test('Inicio presenta propuesta de valor, misión y visión; Equipo tiene su propia página', () => {
+test('la presentación institucional tiene su propia vista, fuera de Inicio', () => {
   const home = renderPage(template, '/');
-  assert.ok(home.includes('Nuestra misión'));
-  assert.ok(home.includes('Nuestra visión'));
-  assert.ok(home.includes('NUESTROS VALORES'));
-  assert.ok(home.includes('NUESTRA PROPUESTA DE VALOR'));
+  assert.equal(home.includes('Nuestra misión'), false);
+  assert.equal(home.includes('Nuestra visión'), false);
+  assert.equal(home.includes('NUESTROS VALORES'), false);
+  assert.equal(home.includes('NUESTRA PROPUESTA DE VALOR'), false);
   assert.equal(home.includes('id="equipo"'), false);
   const team = renderPage(template, '/equipo');
+  assert.ok(team.includes('Nuestra misión'));
+  assert.ok(team.includes('Nuestra visión'));
+  assert.ok(team.includes('NUESTRA PROPUESTA DE VALOR'));
+  assert.ok(team.includes('NUESTROS VALORES'));
   assert.ok(team.includes('id="equipo"'));
   assert.ok(team.includes('aria-current="page"'));
   assert.equal(team.includes('id="inicio"'), false);

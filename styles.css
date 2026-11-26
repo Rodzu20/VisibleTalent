@@ -436,7 +436,7 @@ select{font-size:14px;min-height:50px;border-radius:6px}
 .about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:85px;align-items:center}
 .about-grid h2{font-size:35px;line-height:1.23;margin-top:19px;letter-spacing:-.04em}
 .about-grid>div>p{font-size:15px;color:var(--muted);margin-top:19px;line-height:1.9}
-.about-grid .resource-link{margin-top:15px}
+.about-grid .resource-link{margin-top:15px;white-space:normal}
 .about-path{padding:30px 32px;background:#edf3fb;border:1px solid #d4e1ef;box-shadow:6px 6px 0 #e5def3;border-radius:13px}
 .about-path>div{display:flex;align-items:flex-start;gap:17px;margin-top:25px}
 .about-path>div>span{font-size:13px;font-weight:800;color:#2e6fa7;background:#fff;border:1px solid #c7daed;border-radius:50%;width:35px;height:35px;flex-shrink:0;display:grid;place-items:center}
@@ -450,7 +450,7 @@ select{font-size:14px;min-height:50px;border-radius:6px}
 .values-section{background:#fff}
 .team-section{background:#edf3fb;border-block:1px solid var(--border)}
 .team-section .outcome{background:#fff;padding:27px;border:1px solid #d4e1ef;border-radius:13px}
-.values-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:25px;margin-top:38px}
+.values-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px;margin-top:38px}
 .values-grid article{padding:23px 0 6px;border-top:2px solid #c9dcef}
 .values-grid article:nth-child(even){border-color:#d2c4ec}
 .values-grid article>span{font-size:13px;letter-spacing:2px;color:#2e6fa7;font-weight:750}
