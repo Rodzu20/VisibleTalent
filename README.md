@@ -38,6 +38,7 @@ Para probar el registro utiliza este servidor, no Live Server ni la apertura dir
 | URL | Vista |
 | --- | --- |
 | `/` | Inicio: presentación, misión, visión, valores y beneficios |
+| `/equipo` | Nuestro equipo, presentado por áreas de trabajo |
 | `/planes` | Planes y matriz comparativa |
 | `/blog` | Artículos y acceso al blog de Blogger |
 | `/webinar` | Información del taller de ejemplo |
@@ -47,7 +48,7 @@ Para probar el registro utiliza este servidor, no Live Server ni la apertura dir
 
 El header utiliza enlaces normales entre páginas. Cada URL funciona al abrirla directamente, recargarla o navegar con Atrás/Adelante. Los antiguos enlaces `/#planes`, `/#blog`, `/#webinar` y `/#registro` redirigen a su página correspondiente. Cada vista tiene su propio título principal y metadatos.
 
-Inicio incluye propuesta de valor, misión, visión, valores y Nuestro equipo, presentado por áreas de trabajo: producto y experiencia, tecnología y desarrollo, contenido y comunidad. No se han añadido video de presentación ni información personal de los integrantes. La página móvil identifica la app como propuesta en preparación: los accesos Android e iOS registran interés, no simulan una descarga real de una app publicada.
+Inicio incluye propuesta de valor, misión, visión y valores. Nuestro equipo tiene su propia vista en `/equipo`, presentada por áreas de trabajo: producto y experiencia, tecnología y desarrollo, contenido y comunidad. El header y el pie enlazan esa página; el enlace antiguo `/#equipo` redirige a `/equipo`. No se han añadido video de presentación ni información personal de los integrantes. La página móvil identifica la app como propuesta en preparación: los accesos Android e iOS registran interés, no simulan una descarga real de una app publicada.
 
 ## Blog
 
@@ -70,7 +71,7 @@ npm run check
 npm run build
 ```
 
-`dist/` contiene siete documentos HTML y los recursos públicos. Vercel utiliza `cleanUrls` para servir, por ejemplo, `planes.html` como `/planes`. La configuración de Sites se conserva en `.openai/hosting.json`; no hay credenciales en ese archivo.
+`dist/` contiene ocho documentos HTML y los recursos públicos. Vercel utiliza `cleanUrls` para servir, por ejemplo, `planes.html` como `/planes`. La configuración de Sites se conserva en `.openai/hosting.json`; no hay credenciales en ese archivo.
 
 ## Publicación en Vercel
 

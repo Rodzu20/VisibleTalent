@@ -1,7 +1,7 @@
 const icon = (name) => `<svg class="icon" aria-hidden="true"><use href="#i-${name}"/></svg>`;
 
 // Mantiene útiles los enlaces antiguos que apuntaban a secciones de la landing.
-const legacyPages = { '#planes': '/planes', '#blog': '/blog', '#webinar': '/webinar', '#registro': '/registro', '#prueba-gratuita': '/prueba-gratuita', '#descargar-app': '/descargar-app' };
+const legacyPages = { '#equipo': '/equipo', '#planes': '/planes', '#blog': '/blog', '#webinar': '/webinar', '#registro': '/registro', '#prueba-gratuita': '/prueba-gratuita', '#descargar-app': '/descargar-app' };
 if (location.pathname === '/' && legacyPages[location.hash]) location.replace(legacyPages[location.hash] + location.search);
 
 // Todos los datos de la demo son ficticios y se muestran sin procesamiento remoto.
