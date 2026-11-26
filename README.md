@@ -37,8 +37,8 @@ Para probar el registro utiliza este servidor, no Live Server ni la apertura dir
 
 | URL | Vista |
 | --- | --- |
-| `/` | Inicio: presentación, misión, visión, valores y beneficios |
-| `/equipo` | Sobre VisibleTalent: misión, visión, propuesta de valor y valores |
+| `/` | Inicio: presentación, beneficios, funcionamiento y ejemplo |
+| `/equipo` | Sobre VisibleTalent: misión, visión, propuesta de valor, valores e integrantes |
 | `/planes` | Planes y matriz comparativa |
 | `/blog` | Artículos y acceso al blog de Blogger |
 | `/webinar` | Información del taller de ejemplo |
@@ -48,7 +48,7 @@ Para probar el registro utiliza este servidor, no Live Server ni la apertura dir
 
 El header utiliza enlaces normales entre páginas. Cada URL funciona al abrirla directamente, recargarla o navegar con Atrás/Adelante. Los antiguos enlaces `/#planes`, `/#blog`, `/#webinar` y `/#registro` redirigen a su página correspondiente. Cada vista tiene su propio título principal y metadatos.
 
-La presentación institucional tiene su propia vista en `/equipo`, accesible desde «Nosotros» en el header y «Sobre VisibleTalent» en el pie. La misión y visión reproducen los textos del trabajo VisibleTalent_Trabajo_Parcial_Actualizado.docx (apartados A y B de la formulación estratégica); la propuesta de valor proviene del apartado 1.3.6 y los valores del apartado C. El enlace antiguo `/#equipo` redirige a `/equipo`. No se han añadido video de presentación ni información personal de los integrantes. La página móvil identifica la app como propuesta en preparación: los accesos Android e iOS registran interés, no simulan una descarga real de una app publicada.
+La presentación institucional tiene su propia vista en `/equipo`, accesible desde «Nosotros» en el header y «Sobre VisibleTalent» en el pie. La misión y visión reproducen los textos del trabajo VisibleTalent_Trabajo_Parcial_Actualizado.docx (apartados A y B de la formulación estratégica); la propuesta de valor proviene del apartado 1.3.6 y los valores del apartado C. Los cinco integrantes corresponden a la portada del documento; sus roles funcionales se asignaron como propuesta a petición del usuario: estrategia y producto, investigación y experiencia de usuario, tecnología y desarrollo, contenido y comunidad, marketing y comunicación digital. No se publican códigos de estudiante ni porcentajes de participación. El enlace antiguo `/#equipo` redirige a `/equipo`. No se ha añadido video de presentación. La página móvil identifica la app como propuesta en preparación: los accesos Android e iOS registran interés, no simulan una descarga real de una app publicada.
 
 ## Blog
 
