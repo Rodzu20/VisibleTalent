@@ -490,3 +490,57 @@ select{font-size:14px;min-height:50px;border-radius:6px}
 @media(max-width:960px){.nav-links-group>a{padding:12px}.page-breadcrumb{padding-top:19px}.about-grid{gap:30px}.about-grid h2{font-size:30px}.phone-preview{width:min(300px,95%)}.download-grid{gap:35px}.download-copy>p{font-size:15px}}
 @media(max-width:760px){.about-grid,.download-grid,.trial-layout{grid-template-columns:1fr}.trial-layout{gap:28px}.trial-explainer{padding-top:0}.trial-explainer ol{grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.trial-explainer li{padding-left:0;padding-top:40px}.purpose-grid{gap:19px}.purpose-grid article{padding:25px}.values-grid{grid-template-columns:1fr 1fr;gap:27px}.phone-preview{margin-top:15px}.download-copy{max-width:600px}.about-path{padding:26px}}
 @media(max-width:640px){.page-breadcrumb{font-size:11px;padding-block:18px 8px}.route-page .section{padding-top:25px}.route-page h1{font-size:31px;line-height:1.2}.route-page .section-intro>h1{text-align:left}.about-grid h2{font-size:29px}.about-grid>div>p{font-size:14px}.purpose-grid{grid-template-columns:1fr;margin-top:29px}.purpose-grid p{font-size:14px}.values-grid{gap:22px;margin-top:28px}.values-grid h3{font-size:18px}.values-grid p{font-size:13px}.trial-layout{margin-top:27px}.trial-explainer h3{font-size:22px}.trial-explainer ol{grid-template-columns:1fr;gap:20px}.trial-explainer li{padding-top:0;padding-left:40px}.demo-inline{padding:26px 21px}.demo-inline h2{font-size:26px}.download-copy .app-store-badges{grid-template-columns:1fr 1fr;gap:10px}.download-copy .store-btn{padding:13px 11px;gap:8px}.download-copy .store-btn strong{font-size:13px}.download-copy .store-btn small{font-size:8px}.download-note{max-width:320px}.phone-preview{margin-bottom:16px;box-shadow:9px 10px 0 #dcd3f4}}
+/* === NEXO · Asistente IA Flotante en Esquina Inferior Derecha === */
+.nexo-widget{position:fixed;bottom:22px;right:22px;z-index:80;display:flex;flex-direction:column;align-items:flex-end;gap:12px;font-family:var(--font)}
+.nexo-bubble{position:relative;display:inline-flex;align-items:center;gap:11px;padding:11px 18px 11px 13px;border-radius:999px;background:var(--ink);color:#fff;border:2px solid var(--mint);box-shadow:0 12px 30px #18345459,4px 4px 0 var(--mint);transition:transform .2s,box-shadow .2s,background .2s}
+.nexo-bubble:hover{transform:translateY(-3px);background:#224770;box-shadow:0 16px 34px #1834546b,5px 5px 0 var(--mint)}
+.nexo-bubble-icon{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--mint) 0%,#c4b8ef 100%);color:var(--ink);display:grid;place-items:center;flex-shrink:0}
+.nexo-bubble-icon .icon{width:20px;height:20px}
+.nexo-bubble-text{text-align:left;line-height:1.2}
+.nexo-bubble-text small{display:block;font-family:ui-monospace,'Courier New',monospace;font-size:9px;letter-spacing:1.1px;color:var(--mint);font-weight:700}
+.nexo-bubble-text strong{display:block;font-size:14px;font-weight:800;letter-spacing:-.02em;margin-top:2px}
+.nexo-bubble-pulse{position:absolute;top:-3px;right:-3px;width:13px;height:13px;border-radius:50%;background:#35d0a4;border:2px solid var(--ink)}
+
+.nexo-panel{width:min(385px,calc(100vw - 28px));height:min(540px,calc(100dvh - 110px));background:#fff;border:1px solid #bfd2e7;border-radius:18px;box-shadow:0 22px 60px #18345447,6px 6px 0 #82cfdf;display:flex;flex-direction:column;overflow:hidden}
+.nexo-header{background:var(--ink);color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #2b507a}
+.nexo-identity{display:flex;align-items:center;gap:11px}
+.nexo-avatar{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--mint) 0%,#dcd3f4 100%);color:var(--ink);display:grid;place-items:center;flex-shrink:0}
+.nexo-avatar .icon{width:20px;height:20px}
+.nexo-title-row{display:flex;align-items:center;gap:7px}
+.nexo-title-row strong{font-size:16px;font-weight:800;letter-spacing:-.03em}
+.nexo-badge{font-family:ui-monospace,'Courier New',monospace;font-size:9px;font-weight:800;padding:2px 6px;border-radius:999px;background:var(--mint);color:var(--ink);letter-spacing:.7px}
+.nexo-status{display:flex;align-items:center;gap:6px;font-size:11px;color:#c2d6ec;margin-top:2px}
+.nexo-online-dot{width:7px;height:7px;border-radius:50%;background:#35d0a4;display:inline-block}
+.nexo-header-actions{display:flex;align-items:center;gap:6px}
+.nexo-clear-btn,.nexo-close-btn{width:32px;height:32px;border-radius:8px;border:1px solid #355d87;background:#22456b;color:#fff;font-size:18px;line-height:1;display:grid;place-items:center;transition:background .15s}
+.nexo-clear-btn{font-size:15px}
+.nexo-clear-btn:hover,.nexo-close-btn:hover{background:#2e6fa7;border-color:var(--mint)}
+
+.nexo-messages{flex:1;padding:16px;overflow-y:auto;background:#f6f9fd;display:flex;flex-direction:column;gap:12px}
+.nexo-msg{max-width:88%;padding:11px 14px;border-radius:14px;font-size:13px;line-height:1.65;word-wrap:break-word}
+.nexo-msg p+p{margin-top:8px}
+.nexo-msg ul{margin:6px 0 0;padding-left:18px;display:grid;gap:4px}
+.nexo-msg-bot{align-self:flex-start;background:#fff;color:var(--ink);border:1px solid #d5e2f0;border-bottom-left-radius:4px;box-shadow:2px 3px 0 #e6eef8}
+.nexo-msg-bot strong{color:#183454}
+.nexo-msg-user{align-self:flex-end;background:var(--ink);color:#fff;border-bottom-right-radius:4px;box-shadow:2px 3px 0 #c4b8ef}
+.nexo-msg-action{display:inline-flex;align-items:center;gap:6px;margin-top:9px;padding:6px 11px;border-radius:7px;background:#eaf2fb;border:1px solid #b8d0e8;color:#183454;font-size:11px;font-weight:700;text-decoration:none}
+.nexo-msg-action:hover{background:var(--mint);border-color:var(--ink)}
+.nexo-typing{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:var(--muted);font-style:italic}
+
+.nexo-suggestions{padding:9px 12px;background:#eef4fb;border-top:1px solid #dce6f2;display:flex;gap:7px;overflow-x:auto;scrollbar-width:thin}
+.nexo-chip{flex-shrink:0;padding:6px 11px;border-radius:999px;border:1px solid #c5d7eb;background:#fff;color:var(--ink);font-size:11px;font-weight:700;transition:all .15s;white-space:nowrap}
+.nexo-chip:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+.nexo-input-bar{padding:11px 12px;background:#fff;border-top:1px solid #dce5ef;display:flex;align-items:center;gap:8px}
+.nexo-input-bar input{flex:1;min-height:42px;padding:9px 13px;border:1px solid #bfd2e7;border-radius:10px;background:#fbfdff;color:var(--ink);font:inherit;font-size:13px}
+.nexo-input-bar input:focus-visible{outline:2px solid #2e6fa7;outline-offset:1px}
+.nexo-send-btn{width:42px;height:42px;border-radius:10px;border:1px solid var(--ink);background:var(--ink);color:#fff;display:grid;place-items:center;flex-shrink:0;transition:background .15s,transform .15s}
+.nexo-send-btn:hover{background:#2e6fa7;border-color:#2e6fa7;transform:translateY(-1px)}
+.nexo-send-btn .icon{width:17px;height:17px}
+
+@media(max-width:640px){
+  .nexo-widget{bottom:14px;right:14px}
+  .nexo-panel{width:calc(100vw - 24px);height:min(510px,calc(100dvh - 96px))}
+  .nexo-bubble{padding:10px 15px 10px 11px}
+  .nexo-bubble-text strong{font-size:13px}
+}
